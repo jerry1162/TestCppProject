@@ -15,6 +15,13 @@ static char THIS_FILE[] = __FILE__;
 /////////////////////////////////////////////////////////////////////////////
 // The one and only application object
 
+template<typename T,typename C>
+void Test (T t, C c)
+{
+	cout<<t<<" "<<c<<endl;
+	return;
+}
+
 CWinApp theApp;
 
 using namespace std;
@@ -37,15 +44,19 @@ int _tmain(int argc, TCHAR* argv[], TCHAR* envp[])
 // 		strHello.LoadString(IDS_HELLO);
 // 		cout << (LPCTSTR)strHello << endl;
 
-		CBasic* pObj=new CBasic(5);
-		cout<<typeid(*pObj).name()<<endl;
-		cout<<pObj->GetData()<<endl;
-		delete pObj;
-		pObj=new CChild;
-		pObj->SetData(10);
-		cout<<typeid(*pObj).name()<<endl;
-		cout<<pObj->GetData()<<endl;
-		delete pObj;
+// 		CBasic* pObj=new CBasic(5);
+// 		cout<<typeid(*pObj).name()<<endl;
+// 		cout<<pObj->GetData()<<endl;
+// 		delete pObj;
+// 		pObj=new CChild;
+// 		pObj->SetData(10);
+// 		cout<<typeid(*pObj).name()<<endl;
+// 		cout<<pObj->GetData()<<endl;
+// 		delete pObj;
+// 		
+			Test (1, 2.5f);
+			Test (1.3f, 'h');
+
 	}
 
 	return nRetCode;
